@@ -78,4 +78,34 @@ public class MainActivity extends AppCompatActivity {
         displayForTeamASevenMeterScore(teamASevenMeterScore);
         displayForTeamBSevenMeterScore(teamBSevenMeterScore);
     }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+        // Save the user's current game state
+        savedInstanceState.putInt("StateGoalA", scoreTeamA);
+        savedInstanceState.putInt("StateGoalB", scoreTeamB);
+        savedInstanceState.putInt("StateSevenMA", teamASevenMeterScore);
+        savedInstanceState.putInt("StateSevenMB", teamBSevenMeterScore);
+    }
+
+    /**
+     * Method for restoring and displaying data after switching device orientation.
+     */
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            scoreTeamA = savedInstanceState.getInt("StateGoalA");
+            scoreTeamB = savedInstanceState.getInt("StateGoalB");
+            teamASevenMeterScore = savedInstanceState.getInt("StateSevenMA");
+            teamBSevenMeterScore = savedInstanceState.getInt("StateSevenMB");
+        }
+        displayForTeamA(scoreTeamA);
+        displayForTeamB(scoreTeamB);
+        displayForTeamASevenMeterScore(teamASevenMeterScore);
+        displayForTeamBSevenMeterScore(teamBSevenMeterScore);
+    }
 }
