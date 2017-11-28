@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">CourtCounterHandball</string>
+    <string name="teamA">Hazai</string>
+    <string name="teamAScore">0</string>
+    <string name="teamASevenMeterScore">0</string>
+    <string name="teamB">Vendég</string>
+    <string name="teamBScore">0</string>
+    <string name="teamBSevenMeterScore">0</string>
+    <string name="goal">Gól</string>
+    <string name="goalSevenMeter">Gól (7 méteresből)</string>
+    <string name="reset">Törlés</string>
+</resources>
